@@ -1,7 +1,6 @@
 version: 2
 
 references:
-
   container_config: &container_config
     docker:
       - image: circleci/python:3.7.8
@@ -20,7 +19,6 @@ references:
         echo "export AWS_ACCESS_KEY_ID=$(echo $CREDENTIALS | jq -r '.AccessKeyId')" >> $BASH_ENV
         echo "export AWS_SECRET_ACCESS_KEY=$(echo $CREDENTIALS | jq -r '.SecretAccessKey')" >> $BASH_ENV
         echo "export AWS_SESSION_TOKEN=$(echo $CREDENTIALS | jq -r '.SessionToken')" >> $BASH_ENV
-
 
 jobs:
   sync_cloudformation:
